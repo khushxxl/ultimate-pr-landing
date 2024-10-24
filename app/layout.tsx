@@ -3,6 +3,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
+import Head from "next/head";
 
 const poppins = Poppins({
   weight: ["300"],
@@ -24,7 +25,16 @@ const poppins_bold = Poppins({
 
 export const metadata: Metadata = {
   title: "Nextjs Boilerplate",
-  description: "actually ship(fast)",
+  description:
+    "actually ship(fast) - a simple to use boilerplate right out of the box with auth, payments and db functions all packed with in!",
+  twitter: {
+    card: "summary_large_image", // For a large Twitter card
+    site: "@khushaal_04",
+    title: "actually ship(fast) - Nextjs Boilerplate",
+    description:
+      "actually ship(fast) - a simple to use boilerplate right out of the box with auth, payments and db functions all packed with in!",
+    images: "/twitter-image.png", // Twitter image
+  },
 };
 
 export default function RootLayout({
@@ -34,6 +44,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Head>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@khushaal_04" />
+        <meta
+          name="twitter:title"
+          content="actually ship(fast) - Nextjs Boilerplate"
+        />
+        <meta
+          name="twitter:description"
+          content="actually ship(fast) - a simple to use boilerplate right out of the box with auth, payments and db functions all packed with in!"
+        />
+        <meta name="twitter:image" content="/twitter-image.png" />
+      </Head>
       <body
         className={`${poppins.variable} ${poppins_extrabold.variable} ${poppins_bold.variable}`}
       >

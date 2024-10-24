@@ -46,7 +46,7 @@ export default function Home() {
 
       <Button
         onClick={openInVSCode}
-        className="bg-black text-white border shadow-lg p-5 hover:bg-black mt-5"
+        className="bg-black text-white border-2 shadow-xl p-5 hover:bg-black mt-5"
       >
         Open in VS Code
       </Button>
@@ -54,13 +54,13 @@ export default function Home() {
         This is a Nextjs + Supabase boilerplate, come on now start shipping 🚀
       </p>
 
-      <div className="flex space-x-4 items-center mt-20 text-sm">
+      <div className="flex space-x-4 items-center mt-5 text-sm">
         <p>✅ Authentication</p>
         <p>✅ DB CRUD Actions</p>
         <p>✅ Stripe Payments</p>
       </div>
 
-      <h1>
+      <h1 className="mt-20">
         DB Status:{" "}
         {hasEnvVars
           ? "Successfully Connected to DB ✅"
