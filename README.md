@@ -34,3 +34,39 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# Supabase Database Actions
+
+This module provides a set of utility functions for interacting with a Supabase database. It includes operations for authentication, user management, and CRUD (Create, Read, Update, Delete) operations on database tables.
+
+## Functions
+
+### Authentication
+
+1. `signInWithSupabase(form: { email: string; password: string })`
+
+   - Signs in a user with their email and password.
+
+2. `signUpWithSupabase(form: { email: string; password: string; username: string })`
+
+   - Registers a new user with their email, password, and username.
+
+3. `getAuthenticatedUser()`
+   - Retrieves the currently authenticated user.
+
+### Database Operations
+
+4. `addDataToSupabase(tableName: string, data: any)`
+
+   - Inserts new data into a specified table.
+
+5. `deleteDataFromSupabase(tableName: string, condition: { column: string; value: any })`
+
+   - Deletes data from a specified table based on a condition.
+
+6. `updateDataInSupabase(tableName: string, id: number, data: any)`
+   - Updates data in a specified table for a given ID.
+
+## Usage
+
+First, import the required functions:
