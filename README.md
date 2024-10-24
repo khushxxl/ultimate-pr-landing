@@ -35,6 +35,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+- **Frontend**: Next.js, React, TypeScript
+- **Styling**: Tailwind CSS
+- **Backend**: Supabase
+- **Authentication**: Supabase Auth
+- **Database**: Supabase PostgreSQL
+- **Deployment**: Vercel (recommended)
+
 # Supabase Database Actions
 
 This module provides a set of utility functions for interacting with a Supabase database. It includes operations for authentication, user management, and CRUD (Create, Read, Update, Delete) operations on database tables.
