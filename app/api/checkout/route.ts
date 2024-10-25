@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY! || "");
+if (!process.env.STRIPE_SECRET_KEY) {
+  throw new Error("STRIPE_SECRET_KEY is not defined");
+}
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
+  apiVersion: "2024-09-30.acacia",
+});
 
 export async function POST(req: NextRequest) {
   try {
@@ -15,7 +20,7 @@ export async function POST(req: NextRequest) {
           product_data: {
             name: item.name,
           },
-          unit_amount: item.price * 100,
+          unit_amount: item.price,
         },
         quantity: item.quantity,
       })),
