@@ -77,3 +77,90 @@ This module provides a set of utility functions for interacting with a Supabase 
 ## Usage
 
 First, import the required functions:
+
+````
+# Stripe Checkout API
+
+This project implements a Stripe Checkout API endpoint using Next.js API routes.
+
+## Usage
+
+To use the checkout API, send a POST request to `/api/checkout` with the following structure:
+
+### Example React Component
+
+Here's an example of how to use the checkout API in a React component:
+
+```jsx
+import React, { useState } from 'react';
+
+const CheckoutButton = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleCheckout = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: [
+            {
+              name: 'Product Name',
+              price: 1999, // Price in cents
+              quantity: 1,
+            },
+            // Add more items as needed
+          ],
+        }),
+      });
+
+      const { sessionId } = await response.json();
+
+      // Redirect to Stripe Checkout
+      window.location.href = `https://checkout.stripe.com/pay/${sessionId}`;
+    } catch (error) {
+      console.error('Error:', error);
+      // Handle error (e.g., show error message to user)
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <button onClick={handleCheckout} disabled={isLoading}>
+      {isLoading ? 'Processing...' : 'Checkout'}
+    </button>
+  );
+};
+
+export default CheckoutButton;
+````
+
+This component creates a button that, when clicked, sends a request to the checkout API and redirects the user to the Stripe Checkout page.
+
+### Request Body
+
+The `items` array should contain objects with the following properties:
+
+- `name`: The name of the product
+- `price`: The price of the product in cents (e.g., $19.99 should be 1999)
+- `quantity`: The quantity of the product
+
+### Response
+
+The API will return a JSON object with a `sessionId`. Use this `sessionId` to redirect the user to the Stripe Checkout page.
+
+## Environment Variables
+
+Make sure to set the following environment variable:
+
+- `STRIPE_SECRET_KEY`: Your Stripe secret key
+
+## Notes
+
+- This example uses a test Stripe key. Replace it with your actual secret key in production.
+- Ensure proper error handling and validation in a production environment.
+- The success and cancel URLs are currently set to `/success` and `/cancel` respectively. Update these as needed for your application.
