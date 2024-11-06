@@ -63,7 +63,7 @@ function Signin() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh] bg-background">
-      <div className="w-full max-w-md space-y-8">
+      <div className="w-full max-w-md space-y-8 p-4 sm:p-0">
         <div className="text-center">
           <h2 className="mt-6 text-3xl font-bold text-foreground">
             Sign in to your account

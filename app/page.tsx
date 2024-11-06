@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[80vh]">
+    <div className="flex flex-col items-center justify-center min-h-[80vh] w-full ">
       <h1 className="font-poppins text-4xl">actually ship(fast)</h1>
 
       <div className="mt-10 space-x-4 items-center">
@@ -41,7 +41,7 @@ export default function Home() {
           <p>Follow</p>
         </Button>
       </div>
-      <div className="mt-10">
+      <div className="mt-10 hidden sm:flex ">
         <CodeBlock code={code_snippet} />
       </div>
 
@@ -51,22 +51,24 @@ export default function Home() {
       >
         Open in VS Code
       </Button>
-      <p className="mt-10 text-sm">
-        This is a Nextjs + Supabase boilerplate, come on now start shipping 🚀
-      </p>
+      <div className="flex flex-col text-center p-3">
+        <p className="mt-10 text-sm">
+          This is a Nextjs + Supabase boilerplate, come on now start shipping 🚀
+        </p>
 
-      <div className="flex space-x-4 items-center mt-5 text-sm">
-        <p>✅ Authentication</p>
-        <p>✅ DB CRUD Actions</p>
-        <p>✅ Stripe Payments</p>
+        <div className="flex space-x-4 items-center mt-5 text-sm">
+          <p>✅ Authentication</p>
+          <p>✅ DB CRUD Actions</p>
+          <p>✅ Stripe Payments</p>
+        </div>
+
+        <h1 className="mt-20">
+          DB Status:{" "}
+          {hasEnvVars
+            ? "Successfully Connected to DB ✅"
+            : "Your DB URL or ANON Key are missing ❌"}
+        </h1>
       </div>
-
-      <h1 className="mt-20">
-        DB Status:{" "}
-        {hasEnvVars
-          ? "Successfully Connected to DB ✅"
-          : "Your DB URL or ANON Key are missing ❌"}
-      </h1>
     </div>
   );
 }
