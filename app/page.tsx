@@ -16,6 +16,12 @@ export default function Home() {
     window.open(vscodeUrl, "_blank");
   };
 
+  const openInCursor = () => {
+    const repoUrl = "https://github.com/khushxxl/boilerplate-nextjs";
+    const cursorUrl = `cursor://open?url=${repoUrl}`;
+    window.open(cursorUrl, "_blank");
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-[80vh] w-full ">
       <h1 className="font-poppins text-4xl">actually ship(fast)</h1>
@@ -45,12 +51,20 @@ export default function Home() {
         <CodeBlock code={code_snippet} />
       </div>
 
-      <Button
-        onClick={openInVSCode}
-        className="bg-black text-white border-2 shadow-xl p-5 hover:bg-black mt-5"
-      >
-        Open in VS Code
-      </Button>
+      <div className="flex items-center justify-center mt-5 md:space-x-5 md:flex-row flex-col space-y-4 md:space-y-0">
+        <Button
+          onClick={openInVSCode}
+          className="bg-black text-white border-2 shadow-xl p-5 hover:bg-black "
+        >
+          Open in VS Code
+        </Button>
+        <Button
+          onClick={openInCursor}
+          className="bg-black text-white border-2 shadow-xl p-5 hover:bg-black "
+        >
+          Open in Cursor AI
+        </Button>
+      </div>
       <div className="flex flex-col text-center p-3">
         <p className="mt-10 text-sm">
           This is a Nextjs + Supabase boilerplate, come on now start shipping 🚀
