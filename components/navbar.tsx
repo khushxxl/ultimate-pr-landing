@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { DarkModeToggler } from "./dark-mode-toggler";
 import Link from "next/link";
 import { getAuthenticatedUser, signoutUser } from "@/lib/db/db.actions";
+import Image from "next/image";
+import Logo from "@/assets/logo.png";
 
 function Navbar() {
   const [user, setUser] = useState<any>(null);
@@ -34,31 +36,15 @@ function Navbar() {
   };
 
   return (
-    <div className="top-0 sticky z-50 flex justify-between items-center p-5 px-10">
-      <Link href={"/"}>
-        <h1 className="font-poppins text-sm">actually ship(fast)</h1>
-      </Link>
+    <div className="top-0 border-b border-white/10 sticky z-50 flex justify-evenly items-center p-5 px-10 bg-black">
+      <div>
+        <Link href="/">
+          <Image src={Logo} alt="logo" width={40} height={40} />
+        </Link>
+      </div>
 
-      <div className="flex items-center space-x-3">
-        {user ? (
-          <div className="flex items-center space-x-3">
-            <h1 className="font-poppins text-sm">
-              Hey, {user?.user_metadata?.username}
-            </h1>
-
-            <h1
-              onClick={handleSignOut}
-              className="font-poppins text-sm underline cursor-pointer"
-            >
-              Sign out
-            </h1>
-          </div>
-        ) : (
-          <Link href={"/auth/sign-in"}>
-            <h1 className="font-poppins text-sm underline">Sign in</h1>
-          </Link>
-        )}
-        <DarkModeToggler />
+      <div>
+        <p className="text-white text-2xl font-bold">Ultimate PR</p>
       </div>
     </div>
   );

@@ -25,16 +25,22 @@ const poppins_bold = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Nextjs Boilerplate",
+  title: "Ultimate PR",
   description:
-    "actually ship(fast) - a simple to use boilerplate right out of the box with auth, payments and db functions all packed with in!",
+    "Track & Analyse Your Gym PRs fast & simple. The ultimate app for tracking your fitness progress and personal records.",
   twitter: {
-    card: "summary_large_image", // For a large Twitter card
-    site: "https://boilerplate-nextjs-delta.vercel.app/",
-    title: "actually ship(fast) - Nextjs Boilerplate",
+    card: "summary_large_image",
+    site: "https://ultimatepr.app/",
+    title: "Ultimate PR - Track Your Gym Progress",
     description:
-      "actually ship(fast) - a simple to use boilerplate right out of the box with auth, payments and db functions all packed with in!",
-    images: "/twitter-image.png", // Twitter image
+      "Track & Analyse Your Gym PRs fast & simple. The ultimate app for tracking your fitness progress and personal records.",
+    images: "/twitter-image.png",
+  },
+  openGraph: {
+    title: "Ultimate PR - Track Your Gym Progress",
+    description:
+      "Track & Analyse Your Gym PRs fast & simple. The ultimate app for tracking your fitness progress and personal records.",
+    images: "/twitter-image.png",
   },
 };
 
@@ -47,17 +53,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:site"
-          content="https://boilerplate-nextjs-delta.vercel.app/"
-        />
+        <meta name="twitter:site" content="https://ultimatepr.app/" />
         <meta
           name="twitter:title"
-          content="actually ship(fast) - Nextjs Boilerplate"
+          content="Ultimate PR - Track Your Gym Progress"
         />
         <meta
           name="twitter:description"
-          content="actually ship(fast) - a simple to use boilerplate right out of the box with auth, payments and db functions all packed with in!"
+          content="Track & Analyse Your Gym PRs fast & simple. The ultimate app for tracking your fitness progress and personal records."
         />
         <meta name="twitter:image" content="/twitter-image.png" />
       </Head>
