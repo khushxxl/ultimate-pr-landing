@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Logo from "@/assets/logo.png";
 import Mockup from "@/assets/mockup.png";
 import DownloadNow from "@/assets/download-now.svg";
+import widgetMockup from "@/assets/widget-mockup.png";
 
 function HomePage() {
   const mockups = [
@@ -42,7 +43,6 @@ function HomePage() {
           </a>
         </motion.div>
       </motion.div>
-
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -56,6 +56,109 @@ function HomePage() {
           height={800}
           className="w-full max-w-[600px] md:max-w-[800px]"
         />
+      </motion.div>
+
+      {/* Widget Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="w-full max-w-6xl mx-auto py-12 md:py-16 px-4 md:px-0"
+      >
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+          <div className="w-full md:w-1/2 order-2 md:order-1">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-center md:text-left">
+              Track Your PRs Right From Your Home Screen
+            </h2>
+            <p className="text-zinc-400 mb-6 text-center md:text-left">
+              With our custom iOS widgets, you can view your progress without
+              even opening the app. Keep your most important PRs visible at all
+              times and stay motivated throughout your day.
+            </p>
+            <ul className="space-y-3 max-w-md mx-auto md:mx-0">
+              <li className="flex items-center">
+                <div className="h-6 w-6 rounded-full bg-zinc-800 flex items-center justify-center mr-3 flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-white"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <span className="text-zinc-300 text-sm md:text-base">
+                  Multiple widget sizes available
+                </span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-6 w-6 rounded-full bg-zinc-800 flex items-center justify-center mr-3 flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-white"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <span className="text-zinc-300 text-sm md:text-base">
+                  Customizable display options
+                </span>
+              </li>
+              <li className="flex items-center">
+                <div className="h-6 w-6 rounded-full bg-zinc-800 flex items-center justify-center mr-3 flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 text-white"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <span className="text-zinc-300 text-sm md:text-base">
+                  Real-time PR updates
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 order-1 md:order-2 mb-8 md:mb-0">
+            <div className="relative mx-auto max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px]">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 300, damping: 10 }}
+              >
+                <Image
+                  src={widgetMockup}
+                  alt="iOS Widget Mockup"
+                  width={500}
+                  height={500}
+                  className="w-full h-auto rounded-xl shadow-2xl"
+                />
+              </motion.div>
+              <div className="absolute -bottom-4 -right-4 bg-zinc-800/50 backdrop-blur-md px-4 py-2 rounded-lg border border-zinc-700 hidden md:block">
+                <p className="text-xs text-zinc-300">
+                  <span className="font-bold">Pro tip:</span> Add widgets to
+                  your home screen
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       <div className="w-full max-w-6xl mx-auto py-12 md:py-16">
@@ -199,7 +302,6 @@ function HomePage() {
           </a>
         </motion.div>
       </motion.div>
-
       <footer className="w-full border-t border-zinc-800 mt-12 py-8">
         <div className="max-w-6xl mx-auto px-4 md:px-0">
           <div className="flex flex-col md:flex-row justify-between items-center">
